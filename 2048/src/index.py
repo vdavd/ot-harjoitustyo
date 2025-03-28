@@ -1,4 +1,4 @@
-from game_logic import Game2048
+from game_logic import GameLogic
 from game_loop import GameLoop
 from display import Display
 import pygame
@@ -6,7 +6,7 @@ import pygame
 
 def main():
     pygame.init()
-    game = Game2048()
+    game = GameLogic()
     display = Display()
     loop = GameLoop(game, display)
     loop.start()

@@ -1,9 +1,39 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-Tänne tulee **Aineopintojen harjoitustyö: ohjelmistotekniikka** -kurssin sisältöä _myöhemmin_.
+Klassikkopeli "2048" pygamella toteutettuna Aineopintojen harjoitustyö: ohjelmistotekniikka -kurssia varten.
 
-Laskarit: https://github.com/vdavd/ot-harjoitustyo/tree/master/laskarit
+## Dokumentaatio
 
-Vaatimusmäärittely: https://github.com/vdavd/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md
+- [Vaatimusmäärittely](https://github.com/vdavd/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+- [Työaikakirjanpito](https://github.com/vdavd/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+- [Changelog](https://github.com/vdavd/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
-Työaikakirjanpito: https://github.com/vdavd/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md
+## Asennus
+
+Asenna riippuvuudet:
+
+```bash
+poetry install
+```
+
+Käynnistä sovellus:
+
+```bash
+poetry run invoke start
+```
+
+## Testaus
+
+Suorita testit komennolla:
+
+```bash
+poetry run invoke test
+```
+
+## Testikattavuus
+
+Generoi testikattavuusraportti komennolla:
+
+```bash
+poetry run invoke coverage-report
+```

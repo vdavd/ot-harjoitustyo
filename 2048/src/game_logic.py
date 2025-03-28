@@ -1,9 +1,7 @@
-import os
 import random
-import pygame
 import numpy as np
 
-class Game2048:
+class GameLogic:
     def __init__(self):
         self.grid = np.zeros((4, 4), dtype=int)
         self.init_grid()

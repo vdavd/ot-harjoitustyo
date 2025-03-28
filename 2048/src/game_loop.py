@@ -1,9 +1,9 @@
 import pygame
-from game_logic import Game2048
+from game_logic import GameLogic
 from display import Display
 
 class GameLoop:
-    def __init__(self, game: Game2048, display: Display):
+    def __init__(self, game: GameLogic, display: Display):
         self.game = game
         self.display = display
         self.clock = pygame.time.Clock()
