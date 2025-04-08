@@ -2,6 +2,7 @@ import pygame
 from game_logic import GameLogic
 from display import Display
 
+
 class GameLoop:
     def __init__(self, game: GameLogic, display: Display):
         self.game = game
