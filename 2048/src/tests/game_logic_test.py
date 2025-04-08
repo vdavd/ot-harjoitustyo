@@ -19,7 +19,8 @@ class TestGameLogic(unittest.TestCase):
         self.assertTrue(four_counts <= 2)
 
     def test_update_grid_works(self):
-        grid = np.array([[0, 0, 0, 0],[0, 0, 0, 0],[2, 0, 0, 8],[0, 2, 0, 2]])
+        grid = np.array([[0, 0, 0, 0], [0, 0, 0, 0],
+                        [2, 0, 0, 8], [0, 2, 0, 2]])
 
         self.game_logic.update_grid('left')
         self.game_logic.update_grid('up')
@@ -31,4 +32,5 @@ class TestGameLogic(unittest.TestCase):
     def test_str_representation_is_correct(self):
         self.game_logic.update_grid('left')
 
-        self.assertEqual(str(self.game_logic), '[[2 0 0 0]\n [0 0 0 0]\n [2 4 0 0]\n [0 0 0 0]]')
+        self.assertEqual(str(self.game_logic),
+                         '[[2 0 0 0]\n [0 0 0 0]\n [2 4 0 0]\n [0 0 0 0]]')

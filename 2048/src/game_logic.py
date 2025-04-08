@@ -36,7 +36,6 @@ class GameLogic:
         for i in range(len(compressed_row)):
             if skip:
                 skip = False
-                continue
             else:
                 if i + 1 < len(compressed_row) and compressed_row[i] == compressed_row[i+1]:
                     merged_row.append(compressed_row[i]*2)

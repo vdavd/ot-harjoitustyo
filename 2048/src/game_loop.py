@@ -11,7 +11,7 @@ class GameLoop:
 
     def start(self):
         while True:
-            if self.handle_input() == False:
+            if self.handle_input() is False:
                 break
 
             self.display.draw_grid(self.game.grid)
