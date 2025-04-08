@@ -21,13 +21,13 @@ Sovelluksen käyttöliittymä koostuu pelinäkymästä, jossa käyttäjä voi pe
 
 ### Pelin aloitus
 
-- Käyttäjä voi aloittaa uuden pelin, jolloin 4x4-ruudukkoon ilmestyy kaksi laattaa, joiden arvo on 2 tai 4.
+- Käyttäjä voi aloittaa uuden pelin, jolloin 4x4-ruudukkoon ilmestyy kaksi laattaa, joiden arvo on 2 tai 4. (tehty)
 
 ### Pelimekaniikka
 
-- Käyttäjä voi siirtää siirtää laattoja nuolinäppäimillä ylös, alas tai sivuille.
-- Jos kaksi samanarvoista laattaa koskettavat siirron yhteydessä, ne yhdistyvät yhdeksi laataksi, jonka arvo on laattojen summa.
-- Jokaisen siirron jälkeen johonkin ruudukon satunnaiseen soluun ilmestyy uusi laatta (2 tai 4).
+- Käyttäjä voi siirtää siirtää laattoja nuolinäppäimillä ylös, alas tai sivuille. (tehty)
+- Jos kaksi samanarvoista laattaa koskettavat siirron yhteydessä, ne yhdistyvät yhdeksi laataksi, jonka arvo on laattojen summa. (tehty)
+- Jokaisen siirron jälkeen johonkin ruudukon satunnaiseen soluun ilmestyy uusi laatta (2 tai 4). (tehty)
 - Peli päättyy, kun pelaaja ei voi tehdä enää laillisia siirtoja (ruudukko on täynnä, eikä sisällä vierekkäisiä laattoja, joilla on sama arvo).
 - Peli näyttää pelaajalle voittoilmoituksen, kun 2048-laatta saavutetaan.
 
