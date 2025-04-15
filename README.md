@@ -38,3 +38,9 @@ Generoi testikattavuusraportti komennolla:
 ```bash
 poetry run invoke coverage-report
 ```
+
+## Linttaus
+
+```bash
+poetry run invoke lint
+```
