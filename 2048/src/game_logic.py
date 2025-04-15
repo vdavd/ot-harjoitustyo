@@ -5,16 +5,25 @@ import numpy as np
 class GameLogic:
     def __init__(self):
         self.grid = np.zeros((4, 4), dtype=int)
-        self.init_grid()
+        self._points = 0
+        self._state = "GAME"
+        self.init_game()
+        self.update_points()
 
     def add_tile(self):
         free_spaces = [(row, column) for row in range(4)
                        for column in range(4) if self.grid[row, column] == 0]
-        row, column = random.choice(free_spaces)
-        tile_to_add = 4 if random.random() > 0.8 else 2
-        self.grid[row, column] = tile_to_add
+        if not free_spaces:
+            self.change_state("GAMEOVER")
+        else:
+            row, column = random.choice(free_spaces)
+            tile_to_add = 4 if random.random() > 0.8 else 2
+            self.grid[row, column] = tile_to_add
 
-    def init_grid(self):
+    def init_game(self):
+        self.grid = np.zeros((4, 4), dtype=int)
+        self._points = 0
+        self.change_state("GAME")
         self.add_tile()
         self.add_tile()
 
@@ -59,6 +68,22 @@ class GameLogic:
                 self.grid = np.rot90(new_grid, k=-1)
 
         self.add_tile()
+
+    def check_victory(self):
+        if 2048 in self.grid:
+            self.change_state("WIN")
+
+    def update_points(self):
+        self._points = self.grid.sum()
+
+    def get_points(self):
+        return self._points
+    
+    def change_state(self, state):
+        self._state = state
+    
+    def get_state(self):
+        return self._state
 
     def __str__(self):
         return str(self.grid)

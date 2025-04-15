@@ -11,15 +11,26 @@ class GameLoop:
 
     def start(self):
         while True:
-            if self.handle_input() is False:
-                break
+            self.handle_input()
 
-            self.display.draw_grid(self.game.grid)
-            self.clock.tick(30)
+            match self.game.get_state():
+                case "GAME":
+                    self.display.draw_grid(self.game.grid, self.game.get_points())
+                case "QUIT":
+                    break
+                case "GAMEOVER":
+                    self.display.draw_gameover()
+                case "WIN":
+                    self.display.draw_grid(self.game.grid, self.game.get_points())
+                    self.display.draw_win()
+            self.clock.tick(15)
 
     def handle_input(self):
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_r:
+                    self.game.init_game()
+
                 if event.key == pygame.K_RIGHT:
                     self.game.update_grid('right')
                 if event.key == pygame.K_LEFT:
@@ -28,5 +39,10 @@ class GameLoop:
                     self.game.update_grid('up')
                 if event.key == pygame.K_DOWN:
                     self.game.update_grid('down')
+
+                self.game.update_points()
+                self.game.check_victory()
+
             elif event.type == pygame.QUIT:
-                return False
+                self.game.change_state("QUIT")
+                
