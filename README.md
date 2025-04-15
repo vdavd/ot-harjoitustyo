@@ -8,6 +8,7 @@ Klassikkopeli "2048" pygamella toteutettuna Aineopintojen harjoitustyö: ohjelmi
 - [Työaikakirjanpito](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/tyoaikakirjanpito.md)
 - [Changelog](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/arkkitehtuuri.md)
+- [Release](https://github.com/vdavd/ot-harjoitustyo/releases/tag/viikko5)
 
 ### Suorita seuraavat komennot hakemistossa 2048:
 
