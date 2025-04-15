@@ -9,6 +9,8 @@ Klassikkopeli "2048" pygamella toteutettuna Aineopintojen harjoitustyö: ohjelmi
 - [Changelog](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/arkkitehtuuri.md)
 
+### Suorita seuraavat komennot hakemistossa 2048:
+
 ## Asennus
 
 Asenna riippuvuudet:

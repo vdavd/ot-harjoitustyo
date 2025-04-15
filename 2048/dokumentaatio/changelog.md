@@ -20,3 +20,13 @@
   - Invoke-tehtävä linttaamiselle
 - Automaattinen formatointi otettu käyttöön
   - Invoke-tehtävä automaattiselle fromatoinnille
+
+## Viikko 5
+
+- Sovelluslogiikkaa laajennettu:
+  - Pisteidenlasku
+  - Pelin häviäminen, kun pelaajalla ei ole tilaa tehdä siirtoja
+  - Pelin voittaminen, kun saavutetaan 2048-laatta
+- Sekvenssikaavio, joka kuvaa sovelluksen tilan muutoksia, kun pelilaattoje siirretään
+- Ensimmäinen release
+- Issueiden salliminen

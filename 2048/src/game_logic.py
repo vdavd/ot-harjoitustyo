@@ -78,10 +78,10 @@ class GameLogic:
 
     def get_points(self):
         return self._points
-    
+
     def change_state(self, state):
         self._state = state
-    
+
     def get_state(self):
         return self._state
 

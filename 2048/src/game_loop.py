@@ -45,4 +45,3 @@ class GameLoop:
 
             elif event.type == pygame.QUIT:
                 self.game.change_state("QUIT")
-                

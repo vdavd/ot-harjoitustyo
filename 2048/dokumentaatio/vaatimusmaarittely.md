@@ -12,8 +12,8 @@ Sovelluksessa ei ole erillisiä käyttäjärooleja, sillä kyseessä on yksinpel
 
 Sovelluksen käyttöliittymä koostuu pelinäkymästä, jossa käyttäjä voi pelata 2048-peliä. Näkymään kuuluu:
 
-- 4x4-peliruudukko
-- Nykyinen pistemäärä ja mahdollisesti ennätyspistemäärä
+- 4x4-peliruudukko (tehty)
+- Nykyinen pistemäärä ja mahdollisesti ennätyspistemäärä (tehty ennätyspistemäärää lukkunottamatta)
 - Uusi peli -painike
 - Pelin ohjeet
 
@@ -28,13 +28,13 @@ Sovelluksen käyttöliittymä koostuu pelinäkymästä, jossa käyttäjä voi pe
 - Käyttäjä voi siirtää siirtää laattoja nuolinäppäimillä ylös, alas tai sivuille. (tehty)
 - Jos kaksi samanarvoista laattaa koskettavat siirron yhteydessä, ne yhdistyvät yhdeksi laataksi, jonka arvo on laattojen summa. (tehty)
 - Jokaisen siirron jälkeen johonkin ruudukon satunnaiseen soluun ilmestyy uusi laatta (2 tai 4). (tehty)
-- Peli päättyy, kun pelaaja ei voi tehdä enää laillisia siirtoja (ruudukko on täynnä, eikä sisällä vierekkäisiä laattoja, joilla on sama arvo).
-- Peli näyttää pelaajalle voittoilmoituksen, kun 2048-laatta saavutetaan.
+- Peli päättyy, kun pelaaja ei voi tehdä enää laillisia siirtoja (ruudukko on täynnä, eikä sisällä vierekkäisiä laattoja, joilla on sama arvo). (tehty)
+- Peli näyttää pelaajalle voittoilmoituksen, kun 2048-laatta saavutetaan. (tehty)
 
 ### Pistelasku
 
-- Käyttäjän pisteet kasvavat yhteenlaskettujen laattojen summan mukaan.
-- Sovellus näyttää nykyisen pistemäärän ja mahdollisesti korkeimman saavutetun pisteen.
+- Käyttäjän pisteet kasvavat yhteenlaskettujen laattojen summan mukaan. (tehty)
+- Sovellus näyttää nykyisen pistemäärän ja mahdollisesti korkeimmat saavutetut pisteet. (tehty, mutta piste-ennätystä ei vielä tallenneta)
 
 ## Jatkokehitysideoita
 

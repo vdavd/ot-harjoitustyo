@@ -8,4 +8,6 @@
 |  8.4  | 4    | Pelilogiikan laajennusta, laattojen siirtäminen ja yhdistyminen                                   |
 |       | 1    | Yksikkötestien tekemistä sovellukselle                                                            |
 |       | 0.5  | Luokkakaavion laatiminen sovellukselle                                                            |
-|  yht  | 12.5 |                                                                                                   |
+| 15.4  | 4    | Pelilogiikan laajennusta, pisteiden lasku, häviäminen, voittaminen                                |
+|       | 1    | Sekvenssikaavion laatiminen ja release                                                            |
+|  yht  | 17.5 |                                                                                                   |
