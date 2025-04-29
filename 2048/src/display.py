@@ -29,13 +29,19 @@ class Display:
 
     def draw_points(self, points: int):
         text = self._font.render(f"Points: {points}", True, (0, 0, 0))
-        text_rect = text.get_rect(center=(self._width // 2, self._upper_margin //2))
+        text_rect = text.get_rect(center=(100, self._upper_margin //2))
         self.screen.blit(text, text_rect)
 
-    def draw_grid(self, grid, points):
+    def draw_hiscore(self, hiscore: int):
+        text = self._font.render(f"Hiscore: {hiscore}", True, (0, 0, 0))
+        text_rect = text.get_rect(center=(self._width - 100, self._upper_margin //2))
+        self.screen.blit(text, text_rect)
+
+    def draw_grid(self, grid, points, hiscore):
         self.screen.fill(self._bg_color)
 
         self.draw_points(points)
+        self.draw_hiscore(hiscore)
 
         for row in range(4):
             for column in range(4):

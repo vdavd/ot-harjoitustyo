@@ -5,7 +5,7 @@ def drop_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        drop table if exists users;
+        DROP TABLE IF EXISTS users;
     ''')
 
     connection.commit()
@@ -15,9 +15,9 @@ def create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        create table users (
-            username text primary key,
-            highscore number
+        CREATE TABLE users (
+            username TEXT PRIMARY KEY,
+            hiscore INTEGER
         );
     ''')
 

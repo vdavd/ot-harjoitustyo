@@ -1,5 +1,5 @@
 from database_connection import get_database_connection
-from user import User
+from entities.user import User
 
 class UserRepository:
     def __init__(self, connection):
@@ -15,22 +15,21 @@ class UserRepository:
     
     def find_by_username(self, username):
         self._cursor.execute("SELECT * FROM users WHERE username = ?", [username])
-        result_username, result_hiscore = self._cursor.fetchone()
+        user = self._cursor.fetchone()
 
-        return User(result_username, result_hiscore)
+        if user is not None:
+            return User(user["username"], user["hiscore"])
+        else:
+            return False
     
     def create_user(self, user: User):
         username = user.get_username()
         hiscore = user.get_hiscore()
-        self._cursor.execute("INSERT INTO users VALUES(?, ?)", [username, hiscore])
+        self._cursor.execute("INSERT INTO users VALUES(?, ?)", [username, int(hiscore)])
         self._connection.commit()
 
     def update_hiscore(self, user: User):
         username = user.get_username()
         hiscore = user.get_hiscore()
-        self._cursor.execute("UPDATE users SET hiscore = ? WHERE username = ?", [hiscore, username])
+        self._cursor.execute("UPDATE users SET hiscore = ? WHERE username = ?", (int(hiscore), username))
         self._connection.commit()
-
-
-user_repository = UserRepository(get_database_connection())
-users = user_repository.find_all()

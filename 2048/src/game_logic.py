@@ -1,14 +1,26 @@
 import random
 import numpy as np
+from entities.user import User
+from repositories.user_repository import UserRepository
 
 
 class GameLogic:
-    def __init__(self):
+    def __init__(self, user_repository: UserRepository):
         self.grid = np.zeros((4, 4), dtype=int)
         self._points = 0
         self._state = "GAME"
+        self._repository = user_repository
+        self.init_user()
         self.init_game()
         self.update_points()
+
+    def init_user(self, username="guest"):
+        user = self._repository.find_by_username(username)
+        if user:
+            self._user = user
+        else:
+            self._user = User(username)
+            self._repository.create_user(self._user)
 
     def add_tile(self):
         free_spaces = [(row, column) for row in range(4)
@@ -75,6 +87,7 @@ class GameLogic:
 
     def update_points(self):
         self._points = self.grid.sum()
+        self._user.update_hiscore(self._points)
 
     def get_points(self):
         return self._points
@@ -84,6 +97,12 @@ class GameLogic:
 
     def get_state(self):
         return self._state
+    
+    def save_score(self):
+        self._repository.update_hiscore(self._user)
+
+    def get_hiscore(self):
+        return self._user.get_hiscore()
 
     def __str__(self):
         return str(self.grid)

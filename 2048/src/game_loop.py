@@ -15,13 +15,14 @@ class GameLoop:
 
             match self.game.get_state():
                 case "GAME":
-                    self.display.draw_grid(self.game.grid, self.game.get_points())
+                    self.display.draw_grid(self.game.grid, self.game.get_points(), self.game.get_hiscore())
                 case "QUIT":
+                    self.game.save_score()
                     break
                 case "GAMEOVER":
                     self.display.draw_gameover()
                 case "WIN":
-                    self.display.draw_grid(self.game.grid, self.game.get_points())
+                    self.display.draw_grid(self.game.grid, self.game.get_points(), self.game.get_hiscore())
                     self.display.draw_win()
             self.clock.tick(15)
 
@@ -31,17 +32,18 @@ class GameLoop:
                 if event.key == pygame.K_r:
                     self.game.init_game()
 
-                if event.key == pygame.K_RIGHT:
-                    self.game.update_grid('right')
-                if event.key == pygame.K_LEFT:
-                    self.game.update_grid('left')
-                if event.key == pygame.K_UP:
-                    self.game.update_grid('up')
-                if event.key == pygame.K_DOWN:
-                    self.game.update_grid('down')
-
-                self.game.update_points()
-                self.game.check_victory()
+                if self.game.get_state() == "GAME":
+                    if event.key == pygame.K_RIGHT:
+                        self.game.update_grid('right')
+                    if event.key == pygame.K_LEFT:
+                        self.game.update_grid('left')
+                    if event.key == pygame.K_UP:
+                        self.game.update_grid('up')
+                    if event.key == pygame.K_DOWN:
+                        self.game.update_grid('down')
+    
+                    self.game.update_points()
+                    self.game.check_victory()
 
             elif event.type == pygame.QUIT:
                 self.game.change_state("QUIT")
