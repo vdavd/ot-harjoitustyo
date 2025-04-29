@@ -30,3 +30,15 @@
 - Sekvenssikaavio, joka kuvaa sovelluksen tilan muutoksia, kun pelilaattoje siirretään
 - Ensimmäinen release
 - Issueiden salliminen
+
+## Viikko 6
+
+- Sovellusta laajennettu:
+  - Sovellukseen lisätty SQLite-tietokanta
+  - Sovellus pitää nyt kirjaa pelaajan ennätyspistemäärästä, tallentaen sen tietokantaan
+  - Ennätyspistemäärä näkyy peliruudun yläkulmassa
+- Uusia testejä lisätty
+- Dokumentaatiota laajennettu:
+  - Docstring-kommentteja lisätty moniin tiedostoihin
+  - Arkkitehtuurikuvausta laajennettu
+  - Käyttöohje lisätty

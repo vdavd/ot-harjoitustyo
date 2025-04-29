@@ -1,6 +1,18 @@
+# Arkkitehtuurikuvaus
+
+## Rakenne
+
+Entities-kansio sisältää User-luokan, joka vastaa käyttäjän tietojen säilytämisestä ohjelman suorituksen aikana. Repositories-kansio sisältää UserRepository-luokan, joka vastaa käyttäjän tietojen hakemisesta ja talletamisesta SQLite-tietokantaan. Luokka display vastaa peliruudun piirtämisestä, GameLogic pelin sisäisen logiikan päivittämiseestä ja GameLoop peliloopin ja käyttäjän syötteiden käsittelystä.
+
 ## Luokkakaavio
 
+Sovelluksen luokkarakenne selviää seuraavasta kuvaajasta. Riippuvuudet GameLogic ja Display injektoidaan uokalle GameLoop. Luokilla GameLogic ja UserRepository on riippuvuus luokkaan User.
+
 ![class diagram](kuvat/classdiagram.png)
+
+## Käyttöliittymä
+
+Pelin käyttöliittymä sisältää peliruudukon sekä pelaajan pisteet ja ennätyspistemäärän.
 
 ## Pelin tilan päivittyminen
 
@@ -30,3 +42,7 @@ sequenceDiagram
     deactivate GameLogic
 
 ```
+
+## Tietojen pysyväistallennus
+
+Luokka UserRepository vastaa pelaajan tietojen tallettamisesta SQLite-tietokantaan. Tietokannassa on yksi tietokantataulu, users, joka sisältää pelaajan käyttäjänimen ja ennätyspistemäärän.

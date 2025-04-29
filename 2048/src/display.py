@@ -3,10 +3,11 @@ import pygame
 
 class Display:
     """Class fro handling the game display.
-    """    
+    """
+
     def __init__(self):
         """Class constructor that declares constants for the display and initiates the screen.
-        """        
+        """
         self._tile_size = 100
         self._margin = 5
         self._upper_margin = 50
@@ -36,9 +37,9 @@ class Display:
 
         Args:
             points (int): The player's points.
-        """        
+        """
         text = self._font.render(f"Points: {points}", True, (0, 0, 0))
-        text_rect = text.get_rect(center=(100, self._upper_margin //2))
+        text_rect = text.get_rect(center=(100, self._upper_margin // 2))
         self.screen.blit(text, text_rect)
 
     def draw_hiscore(self, hiscore: int):
@@ -46,19 +47,21 @@ class Display:
 
         Args:
             hiscore (int): The player's hiscore.
-        """        
+        """
         text = self._font.render(f"Hiscore: {hiscore}", True, (0, 0, 0))
-        text_rect = text.get_rect(center=(self._width - 100, self._upper_margin //2))
+        text_rect = text.get_rect(
+            center=(self._width - 100, self._upper_margin // 2))
         self.screen.blit(text, text_rect)
 
     def draw_grid(self, grid, points, hiscore):
-        """Method for drawing the main view of the game, including the game grid, points and hiscore.
+        """Method for drawing the main view of the game, 
+        including the game grid, points and hiscore.
 
         Args:
             grid: The game grid.
             points: The player's points
             hiscore: The player's hiscore.
-        """        
+        """
         self.screen.fill(self._bg_color)
 
         self.draw_points(points)
@@ -72,7 +75,8 @@ class Display:
                 tile_color = self._tile_colors.get(tile_value)
 
                 x = column * (self._tile_size + self._margin) + self._margin
-                y = row * (self._tile_size + self._margin) + self._margin + self._upper_margin
+                y = row * (self._tile_size + self._margin) + \
+                    self._margin + self._upper_margin
 
                 pygame.draw.rect(self.screen, tile_color, (x, y,
                                  self._tile_size, self._tile_size), border_radius=8)
@@ -87,24 +91,26 @@ class Display:
 
     def draw_gameover(self):
         """Method for drawing the game over -screen.
-        """        
+        """
         text = self._font.render('GAME OVER', True, (0, 0, 0))
         text_rect = text.get_rect(center=self.screen.get_rect().center)
         self.screen.blit(text, text_rect)
         text = self._font.render('PRESS R TO RESTART', True, (0, 0, 0))
-        text_rect = text.get_rect(center=(self._width // 2, self._height // 2 + 50))
+        text_rect = text.get_rect(
+            center=(self._width // 2, self._height // 2 + 50))
         self.screen.blit(text, text_rect)
 
         pygame.display.flip()
 
     def draw_win(self):
         """Method for drawing the victory screen.
-        """        
+        """
         text = self._font.render('YOU WON!', True, (252, 15, 192))
         text_rect = text.get_rect(center=self.screen.get_rect().center)
         self.screen.blit(text, text_rect)
         text = self._font.render('PRESS R FOR NEW GAME', True, (252, 15, 192))
-        text_rect = text.get_rect(center=(self._width // 2, self._height // 2 + 50))
+        text_rect = text.get_rect(
+            center=(self._width // 2, self._height // 2 + 50))
         self.screen.blit(text, text_rect)
 
         pygame.display.flip()

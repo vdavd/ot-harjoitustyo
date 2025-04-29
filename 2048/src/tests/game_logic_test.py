@@ -37,7 +37,7 @@ class TestGameLogic(unittest.TestCase):
 
         self.assertEqual(str(self.game_logic),
                          '[[2 0 0 0]\n [0 0 0 0]\n [2 4 0 0]\n [0 0 0 0]]')
-        
+
     def test_get_points_works(self):
         self.game_logic.update_grid('left')
         self.game_logic.update_points()
@@ -48,7 +48,8 @@ class TestGameLogic(unittest.TestCase):
         self.assertEqual(self.game_logic.get_state(), "GAME")
 
     def test_check_victory_works(self):
-        self.game_logic.grid = np.array([[2048,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]])
+        self.game_logic.grid = np.array(
+            [[2048, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
         self.game_logic.check_victory()
 
         self.assertEqual(self.game_logic.get_state(), "WIN")

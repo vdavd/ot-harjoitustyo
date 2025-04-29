@@ -9,8 +9,9 @@ Klassikkopeli "2048" pygamella toteutettuna Aineopintojen harjoitustyö: ohjelmi
 - [Changelog](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/arkkitehtuuri.md)
 - [Release](https://github.com/vdavd/ot-harjoitustyo/releases/tag/viikko5)
+- [Käyttöohje](https://github.com/vdavd/ot-harjoitustyo/blob/master/2048/dokumentaatio/kayttoohje.md)
 
-### Suorita seuraavat komennot hakemistossa 2048:
+## Suorita seuraavat komennot hakemistossa 2048:
 
 ## Asennus
 
@@ -18,6 +19,12 @@ Asenna riippuvuudet:
 
 ```bash
 poetry install
+```
+
+Alusta tietokanta:
+
+```bash
+poetry run invoke init-db
 ```
 
 Käynnistä sovellus:

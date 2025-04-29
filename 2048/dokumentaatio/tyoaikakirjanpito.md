@@ -10,4 +10,9 @@
 |       | 0.5  | Luokkakaavion laatiminen sovellukselle                                                            |
 | 15.4  | 4    | Pelilogiikan laajennusta, pisteiden lasku, häviäminen, voittaminen                                |
 |       | 1    | Sekvenssikaavion laatiminen ja release                                                            |
-|  yht  | 17.5 |                                                                                                   |
+| 28.4  | 2    | Tietokanna lisäys sovellukseen                                                                    |
+| 29.4  | 2    | Pelin toiminta tietokannan kanssa                                                                 |
+|       | 0.5  | Testien laajennus                                                                                 |
+|       | 1    | Docstringien lisäys                                                                               |
+|       | 0.5  | Arkkitehtuurikuvauksen laajennus, käyttöohje                                                      |
+|  yht  | 23.5 |                                                                                                   |
