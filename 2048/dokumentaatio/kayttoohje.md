@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa viimesin [release](https://github.com/vdavd/ot-harjoitustyo/releases/tag/viikko5)
+Lataa viimesin [release](https://github.com/vdavd/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Ohjelman asennus ja käynnistäminen
 
