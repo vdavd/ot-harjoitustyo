@@ -1,13 +1,16 @@
 import unittest
 import numpy as np
-from game_logic import GameLogic
 import random
+from game_logic import GameLogic
+from repositories.user_repository import UserRepository
+from database_connection import get_database_connection
 
 
 class TestGameLogic(unittest.TestCase):
     def setUp(self):
         random.seed(10)
-        self.game_logic = GameLogic()
+        user_repository = UserRepository(get_database_connection())
+        self.game_logic = GameLogic(user_repository)
 
     def test_game_logic_object_initiates_correctly(self):
         zero_counts = np.count_nonzero(self.game_logic.grid == 0)
@@ -34,3 +37,18 @@ class TestGameLogic(unittest.TestCase):
 
         self.assertEqual(str(self.game_logic),
                          '[[2 0 0 0]\n [0 0 0 0]\n [2 4 0 0]\n [0 0 0 0]]')
+        
+    def test_get_points_works(self):
+        self.game_logic.update_grid('left')
+        self.game_logic.update_points()
+
+        self.assertEqual(self.game_logic.get_points(), 8)
+
+    def test_get_state_works(self):
+        self.assertEqual(self.game_logic.get_state(), "GAME")
+
+    def test_check_victory_works(self):
+        self.game_logic.grid = np.array([[2048,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]])
+        self.game_logic.check_victory()
+
+        self.assertEqual(self.game_logic.get_state(), "WIN")

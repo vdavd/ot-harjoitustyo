@@ -2,7 +2,11 @@ import pygame
 
 
 class Display:
+    """Class fro handling the game display.
+    """    
     def __init__(self):
+        """Class constructor that declares constants for the display and initiates the screen.
+        """        
         self._tile_size = 100
         self._margin = 5
         self._upper_margin = 50
@@ -28,16 +32,33 @@ class Display:
         pygame.display.set_caption("2048")
 
     def draw_points(self, points: int):
+        """Method for drawing the player's points on top of the screen.
+
+        Args:
+            points (int): The player's points.
+        """        
         text = self._font.render(f"Points: {points}", True, (0, 0, 0))
         text_rect = text.get_rect(center=(100, self._upper_margin //2))
         self.screen.blit(text, text_rect)
 
     def draw_hiscore(self, hiscore: int):
+        """Method for drawing the player's hiscore on top of the screen.
+
+        Args:
+            hiscore (int): The player's hiscore.
+        """        
         text = self._font.render(f"Hiscore: {hiscore}", True, (0, 0, 0))
         text_rect = text.get_rect(center=(self._width - 100, self._upper_margin //2))
         self.screen.blit(text, text_rect)
 
     def draw_grid(self, grid, points, hiscore):
+        """Method for drawing the main view of the game, including the game grid, points and hiscore.
+
+        Args:
+            grid: The game grid.
+            points: The player's points
+            hiscore: The player's hiscore.
+        """        
         self.screen.fill(self._bg_color)
 
         self.draw_points(points)
@@ -65,6 +86,8 @@ class Display:
         pygame.display.flip()
 
     def draw_gameover(self):
+        """Method for drawing the game over -screen.
+        """        
         text = self._font.render('GAME OVER', True, (0, 0, 0))
         text_rect = text.get_rect(center=self.screen.get_rect().center)
         self.screen.blit(text, text_rect)
@@ -75,6 +98,8 @@ class Display:
         pygame.display.flip()
 
     def draw_win(self):
+        """Method for drawing the victory screen.
+        """        
         text = self._font.render('YOU WON!', True, (252, 15, 192))
         text_rect = text.get_rect(center=self.screen.get_rect().center)
         self.screen.blit(text, text_rect)
