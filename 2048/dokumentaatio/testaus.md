@@ -1,6 +1,6 @@
 # Testausdokumentti
 
-Sovellusta testataan yksikkötesteillä sekä integraatiotesteillä, joita kohdistetaan GameLogic- ja GameLoop-luokkiin. Testikansiossa on määritelty conftest.py -tiedosto, joka alustaa testitietokannan.
+Sovellusta testataan yksikkötesteillä sekä integraatiotesteillä, joita kohdistetaan GameLogic- ja GameLoop-luokkiin. Testikansiossa on määritelty conftest.py -tiedosto, joka alustaa testitietokannan. Tämä tietokanta on erillinen sovelluksen tuotantotietokannasta.
 
 ## Sovelluslogiikka
 
@@ -12,7 +12,7 @@ Peliloopin toiminnasta vastaa GameLoop-luokka, jolle tehdään automatisoituja t
 
 ## Testauskattavuus
 
-Sovelluksen estauksen haarautumakattavuus on 84%. Käyttöliittymän testaus on jätetty haarautumakattavuuden ulkopuolelle.
+Sovelluksen testauksen haarautumakattavuus on 84%. Käyttöliittymän testaus on jätetty haarautumakattavuuden ulkopuolelle.
 
 ![coverage report](kuvat/coverage_report.png)
 
