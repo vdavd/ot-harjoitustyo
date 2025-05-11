@@ -42,3 +42,16 @@
   - Docstring-kommentteja lisätty moniin tiedostoihin
   - Arkkitehtuurikuvausta laajennettu
   - Käyttöohje lisätty
+
+## Loppupalautus
+
+- Sovelluksen rakenne:
+  - EventQueue- ja Clock-luokat eriytetty GameLoop-luokasta
+  - Erillinen tietokantatiedosto testeille
+- Testaamista laajennettu:
+  - Yksikkötestejä GameLoop-luokalle
+  - Integraatiotestejä GameLoop- ja GameLogic-luokille
+- Dokumentaatiota laajennettu:
+  - Arkkitehtuuridokumentin laajennus
+  - Testausdokumentti
+  - Vaatimusmäärittelyn päivitys

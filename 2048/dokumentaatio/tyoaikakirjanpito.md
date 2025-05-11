@@ -15,4 +15,9 @@
 |       | 0.5  | Testien laajennus                                                                                 |
 |       | 1    | Docstringien lisäys                                                                               |
 |       | 0.5  | Arkkitehtuurikuvauksen laajennus, käyttöohje                                                      |
-|  yht  | 23.5 |                                                                                                   |
+| 10.5  | 1    | Sovelluksen rakenteen muutokset                                                                   |
+|       | 2    | Testien laajennus                                                                                 |
+| 11.5  | 2    | Testien laajennus                                                                                 |
+|       | 3    | Dokumentaation laajennus                                                                          |
+|       | 2    | Repositorion viimeistely                                                                          |
+|  yht  | 33.5 |                                                                                                   |
