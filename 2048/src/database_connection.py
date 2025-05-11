@@ -14,5 +14,7 @@ test_connection.row_factory = sqlite3.Row
 def get_database_connection(mode="production"):
     if mode == "production":
         return connection
-    elif mode == "testing":
+    if mode == "testing":
         return test_connection
+
+    return None
