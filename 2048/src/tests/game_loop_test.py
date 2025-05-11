@@ -29,7 +29,7 @@ class MockEventQueue:
 class TestGameLoop(unittest.TestCase):
     def setUp(self):
         random.seed(10)
-        user_repository = UserRepository(get_database_connection())
+        user_repository = UserRepository(get_database_connection("testing"))
         self.game_logic = GameLogic(user_repository)
         self.mock_display = Mock()
         self.mock_clock = MockClock()

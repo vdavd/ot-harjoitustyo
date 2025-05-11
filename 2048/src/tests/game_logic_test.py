@@ -9,7 +9,7 @@ from database_connection import get_database_connection
 class TestGameLogic(unittest.TestCase):
     def setUp(self):
         random.seed(10)
-        user_repository = UserRepository(get_database_connection())
+        user_repository = UserRepository(get_database_connection("testing"))
         self.game_logic = GameLogic(user_repository)
 
     def test_game_logic_object_initiates_correctly(self):

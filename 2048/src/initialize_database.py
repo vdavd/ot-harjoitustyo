@@ -24,8 +24,8 @@ def create_tables(connection):
     connection.commit()
 
 
-def initialize_database():
-    connection = get_database_connection()
+def initialize_database(mode="production"):
+    connection = get_database_connection(mode)
 
     drop_tables(connection)
     create_tables(connection)

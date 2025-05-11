@@ -5,3 +5,4 @@ htmlcov
 kaavio.md
 
 2048/data/database.sqlite
+2048/data/test_database.sqlite
