@@ -23,6 +23,7 @@ sequenceDiagram
     actor Player
     participant GameLoop
     participant GameLogic
+    participant User
     Player->>GameLoop: press down right key button
     GameLoop->>GameLogic: update_grid('right')
     activate GameLogic
@@ -34,6 +35,7 @@ sequenceDiagram
     end
     deactivate GameLogic
     GameLoop->>GameLogic: update_points()
+    GameLogic->>User: update_hiscore()
     GameLoop->>GameLogic: check_victory()
     activate GameLogic
     opt 2048 in grid
